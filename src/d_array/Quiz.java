@@ -84,11 +84,11 @@ public class Quiz {
 //		}
 		
 		//중복되지 않는 배열
-		int[] arr = new int[10];
-		for(int i = 0; i < arr.length; i++){
-			arr[i] = (int)(Math.random()*5)+1;
-		}
-		System.out.println(Arrays.toString(arr));
+//		int[] arr = new int[10];
+//		for(int i = 0; i < arr.length; i++){
+//			arr[i] = (int)(Math.random()*5)+1;
+//		}
+//		System.out.println(Arrays.toString(arr));
 		/*
 		 * 1~5사이의 랜덤한 값이 10개 저장된 배열에서 중복된 값이 제거된 배열을 만들어주세요.
 		 * [4, 2, 1, 2, 5, 1, 4, 4, 2, 1]
@@ -110,37 +110,54 @@ public class Quiz {
 //			arr = new int[count];
 //		}
 //		System.out.println(Arrays.toString(arr));
-		int[] temp = new int[5];
-		int count = 0;
+//		int[] temp = new int[5];
+//		int count = 0;
+//		
+//		for(int i = 0; i < arr.length; i++){
+//			boolean flag = true;
+//			for(int j = 0; j < temp.length; j++){
+//				if(arr[i] == temp[j]){
+//					flag = false;
+//				}
+//			}
+//			if(flag){
+//				temp[count++] = arr[i];
+//			}
+//		}
+//		int[] result = new int[count];
+//		for(int i = 0; i < result.length; i++){
+//			result[i] = temp[i];
+//		}
+//		System.out.println(Arrays.toString(result));
+//		
+//		
+//		arr = new int[100];
+//		for(int i = 0; i < arr.length; i++){
+//			arr[i] = (int)(Math.random() * 100)+1;
+//		}
 		
-		for(int i = 0; i < arr.length; i++){
-			boolean flag = true;
-			for(int j = 0; j < temp.length; j++){
-				if(arr[i] == temp[j]){
-					flag = false;
-				}
-			}
-			if(flag){
-				temp[count++] = arr[i];
-			}
-		}
-		int[] result = new int[count];
-		for(int i = 0; i < result.length; i++){
-			result[i] = temp[i];
-		}
-		System.out.println(Arrays.toString(result));
 		
-		
-		arr = new int[100];
-		for(int i = 0; i < arr.length; i++){
-			arr[i] = (int)(Math.random() * 100)+1;
-		}
 		/*
-		 * 2 ~ 5사이의 랜덤한 수로 나누어 떨어지는 숫자로만 이루어진 배열을 정렬하여 출려해주세요.
+		 * <과제>
+		 * 2 ~ 5사이의 랜덤한 수로 나누어 떨어지는 숫자로만 이루어진 배열을 정렬하여 출력해주세요.
 		 * 5
 		 * [5, 10, 15, 20, 25, 30]
 		 * %를 사용하여 나머지가 0인 값이 떨어지는 것
 		 */
+		int Number = (int)(Math.random()*5 + 2); // 2~5 랜덤 수: 이것으로만 나누어 떨어지게 하자 
+		// (Number * i) / Number -> i는 반복문을 사용하여 증가시킨다
+		int[] saved = new int[7];
+		
+		
+		for(int i = 1; i < 7; i++){
+			int temp = (Number * i) % Number;
+			if(temp == 0){
+				saved[i] = Number * i; //출력하는 목적이 되는 값*
+			}
+		}
+		System.out.println("임의의 정수> " + Number);
+		System.out.println(Arrays.toString(saved));	
+		
 	} //main블럭
 
 }
