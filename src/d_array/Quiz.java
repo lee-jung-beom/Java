@@ -144,19 +144,50 @@ public class Quiz {
 		 * [5, 10, 15, 20, 25, 30]
 		 * %를 사용하여 나머지가 0인 값이 떨어지는 것
 		 */
-		int Number = (int)(Math.random()*5 + 2); // 2~5 랜덤 수: 이것으로만 나누어 떨어지게 하자 
-		// (Number * i) / Number -> i는 반복문을 사용하여 증가시킨다
-		int[] saved = new int[7];
+//		int Number = (int)(Math.random()*4 + 2); // 2~5 랜덤 수: 이것으로만 나누어 떨어지게 하자 
+//		// (Number * i) / Number -> i는 반복문을 사용하여 증가시킨다
+//		int[] saved = new int[6];		
+//		
+//		for(int i = 1; i < 6; i++){
+//			int temp = (Number * i) % Number;
+//			if(temp == 0){
+//				saved[i] = Number * i; //출력하는 목적이 되는 값*
+//			}
+//		}
+//		System.out.println("임의의 정수> " + Number);
+//		System.out.println(Arrays.toString(saved));	
 		
 		
-		for(int i = 1; i < 7; i++){
-			int temp = (Number * i) % Number;
-			if(temp == 0){
-				saved[i] = Number * i; //출력하는 목적이 되는 값*
+		int[] arr = new int[20];
+		
+		int[] tempArr = new int[100];
+		int n = (int)(Math.random() * 4) + 2;
+		int count = 0;
+		for(int i = 0; i < arr.length; i++){
+			if(arr[i] % n == 0){
+				tempArr[count++] = arr[i];
 			}
 		}
-		System.out.println("임의의 정수> " + Number);
-		System.out.println(Arrays.toString(saved));	
+		
+		int[] resultArr = new int[count];
+		for(int i = 0; i < resultArr.length; i++){
+			resultArr[i] = tempArr[i];
+		}
+		
+		for(int i  = 0; i < resultArr.length - 1; i++){
+			int min = i;
+			for(int j = i + 1; j < resultArr.length; j++){
+				if(resultArr[j] < resultArr[min]){
+					min = j;
+				}
+			}
+			int tmp = resultArr[i];
+			resultArr[i] = resultArr[min];
+			resultArr[min] = tmp;
+		}
+		System.out.println("n : " + n);
+		System.out.println(Arrays.toString(resultArr));
+		
 		
 	} //main블럭
 
