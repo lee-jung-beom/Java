@@ -21,7 +21,7 @@ public class Score {
 		 */
 		
 //		String[] subjectName = {"국어", "영어", "수학", "사회", "과학", "Oracle", "Java", "합계", "평균", "석차"};
-		int[][] score = new int[5][7]; //5칼럼, 7레코드 (5명의 7개 과목 점수)
+		int[][] score = new int[5][7]; //5레코드, 7칼럼 
 		String[] name = {"보라돌이", "뚜비", "나나", "뽀", "그린"};		
 		int[] sum = new int[score.length]; 
 		double[] avg = new double[score.length];
@@ -31,6 +31,7 @@ public class Score {
 
 		System.out.println("이름\t국어\t영어\t수학\t사회\t과학\tOracle\tJava\t합계\t평균\t석차");
 		for(int i = 0; i < score.length; i++){
+			System.out.printf("%s", name[i]);
 			for(int j = 0; j < score[i].length; j++){
 				score[i][j] = (int)(Math.random()*100);
 				sum[i] += score[i][j]; //과목 합계
@@ -47,17 +48,24 @@ public class Score {
 		}
 		
 		System.out.print("과목합계");
-//		System.out.println();
-//		System.out.print("과목평균");
 		for(int i = 0; i < score[0].length; i++){
 			for(int j = 0; j < score.length; j++){
-				sum_down[score[i].length] += score[j][i];
-				avg_down[score[i].length] = score[j][i]/score.length;
+				sum_down[i] += score[j][i];
+				avg_down[i] = sum_down[i] / score.length; 
 			}
+			System.out.printf("\t%d", sum_down[i]);		
 		}
 		
-		
-		
+		System.out.println();
+		System.out.print("과목평균");
+		for(int i = 0; i < score[0].length; i++){
+			for(int j = 0; j < score.length; j++){
+				sum_down[i] += score[j][i];
+				avg_down[i] = sum_down[i] / score.length; 
+			}
+			System.out.printf("\t%.2f", (double)avg_down[i]);			
+		}
+	
 		
 		
 	} // main블럭
