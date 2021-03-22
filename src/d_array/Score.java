@@ -51,7 +51,6 @@ public class Score {
 		for(int i = 0; i < score[0].length; i++){
 			for(int j = 0; j < score.length; j++){
 				sum_down[i] += score[j][i];
-				avg_down[i] = sum_down[i] / score.length; 
 			}
 			System.out.printf("\t%d", sum_down[i]);		
 		}
@@ -60,9 +59,8 @@ public class Score {
 		System.out.print("과목평균");
 		for(int i = 0; i < score[0].length; i++){
 			for(int j = 0; j < score.length; j++){
-				sum_down[i] += score[j][i];
 				avg_down[i] = sum_down[i] / score.length; 
-			}
+			}	 
 			System.out.printf("\t%.2f", (double)avg_down[i]);			
 		}
 	
