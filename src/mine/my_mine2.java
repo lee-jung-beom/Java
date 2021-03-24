@@ -15,9 +15,7 @@ public class my_mine2 {
 			System.out.println();
 			for(int j = 0; j < num[i].length; j++){
 				for(int k = 0; k < num[i][j].length; k++){
-					sum[num[i][j].length] += num[i][j][k];
-					temp = sum[num[i][j].length];
-					System.out.printf("\t%d", temp);
+					
 				}
 				System.out.println();
 			}
