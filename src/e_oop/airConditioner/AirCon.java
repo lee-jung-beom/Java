@@ -110,4 +110,4 @@ public class AirCon {
 		
 	} //main메서드 블럭
 
-}
+} //TEST
