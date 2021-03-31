@@ -1,11 +1,14 @@
 package CatchMe_GAME;
 
+import java.util.Arrays;
+
 
 
 public class InGame { //여기서 본 게임 프로세스 구성	
-	Stage stage = new Stage();
-	
+//	Stage stage = new Stage();
 	Scan input = new Scan();
+//	Player player = new Player(input.nextInt());	
+	
 		
 	void sumMethod(){ //이곳에 이 클래스에서 작성한 모든 메서드를 통합하여 간략하게 정리 해준다.
 		explainGame();
@@ -24,26 +27,34 @@ public class InGame { //여기서 본 게임 프로세스 구성
 	}
 	
 	void Processing(){
+//		Player player = new Player(input.nextInt());
+		
 		System.out.println();
 		System.out.println("[STAGE-I]");
-				
-		System.out.print("player 이동 거리 입력> ");
-		input.nextInt();
-		
-		for(int i = 0; i < ){
-			
+	
+//		for(int i = 0; i < 20; i++){ //stage1
+//			System.out.print(" ● ");
+//		}
+		String[] stage1 = {"●","●","●","●","●","●","●","●","●","●","●","●","●","●","●","●","●","●","●","●"}; //stage1, 20칸
+		System.out.println(Arrays.deepToString(stage1));		
+		System.out.println();
+		System.out.print("player 이동 거리 입력 >> ");
+		Player player = new Player(input.nextInt());
+		switch(input.nextInt()){
+		case 1 : 
 		}
+		
 	}
 	
 }// InGame클래스 end블럭
 
 
 /*====================================================================================*/
-class Stage{
-	
-	void Stage1() {
-		String[] stage1 = {"●","●","●","●","●","●","●","●","●","●","●","●","●","●","●","●","●","●","●","●"}; //20칸 
-	}
+//class Stage{
+//	
+//	void Stage1() {
+//		String[] stage1 = {"●","●","●","●","●","●","●","●","●","●","●","●","●","●","●","●","●","●","●","●"}; //20칸 
+//	}
 	
 //	void Stage2() {
 //
@@ -52,7 +63,7 @@ class Stage{
 //	void Stage3() {
 //
 //	}
-}// Stage클래스 end블럭
+//}// Stage클래스 end블럭
 
 
 /*====================================================================================*/
@@ -64,10 +75,12 @@ class Player{ //player클래스 정의
 	int level;
 	
 	Player(int movement){
-		life = 3; //목숨 3개로 초기화
+		this.life = 3; //목숨 3개로 초기화
 		this.movment = movement; //이동 가능 거리 파라미터 값 받아오기(player는 사용자가 값을 직접입력하여 이동할 수 있도록 한다. )
 		level = 1; //초기 레벨 1로 선언
 	}
+	
+	
 	
 }// Player클래스 end블럭
 
